@@ -5,7 +5,7 @@ Per accedere alla pagina statica utilizzare il file index.html da cui si può ac
 
 ***
 
-ISTRUZIONI PER L'APPLICAZIONE DELLA GESTIONE PRENOTAZIONI REALIZZATA IN PHP E MYSQL
+## ISTRUZIONI PER L'APPLICAZIONE DELLA GESTIONE PRENOTAZIONI REALIZZATA IN PHP E MYSQL
 
 per far fuzionare la parte di MySQL è necessario creare un data base con il nome "gestioneprenotazioni" composto da 4 tabelle:
 
