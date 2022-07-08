@@ -11,29 +11,29 @@ per far fuzionare la parte di MySQL è necessario creare un data base con il nom
 
 ### TABELLA 1 - NOME: clienti
 
-ID      4     int       A.I.
-nome    50    varchar   null
-email   50    varchar   null
-note    255   varchar   null
+* ID      4     int       A.I.
+* nome    50    varchar   null
+* email   50    varchar   null
+* note    255   varchar   null
 
 ### TABELLA 2 - NOME: prenotazioni
 
-ID        4     int       A.I.
-cliente   50    varchar   null
-camera    30    varchar   null
-dataDa    20    DATE      null
-dataA     20    DATE      null
+* ID        4     int       A.I.
+* cliente   50    varchar   null
+* camera    30    varchar   null
+* dataDa    20    DATE      null
+* dataA     20    DATE      null
 
 ### TABELLA 3 - NOME: utenti
 
-ID        4     int       A.I.
-username  20    varchar   null
-password  255   varchar   null
+* ID        4     int       A.I.
+* username  20    varchar   null
+* password  255   varchar   null
 
 ### TABELLA 4 - NOME: utentiloggati
 
-sessionid   255   varchar   null
-idlogged    4     varchar   null
+* sessionid   255   varchar   null
+* idlogged    4     varchar   null
 
 ***
 
