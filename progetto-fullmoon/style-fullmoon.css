@@ -1,0 +1,689 @@
+/* progetto full moon */
+
+/* tavolozza colori */
+
+/*
+#814906;  marrone 
+#D35823;  arancione
+#F2CC96;  crema scuro
+#F7EBC9;  crema chiaro
+
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  color: #814906;  /* marrone */
+}
+
+a {
+  text-decoration: none;
+}
+
+/* header */
+
+.header {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  height: 150px;
+  z-index: 3;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  display: block;
+  padding: 10px;
+  width: 130px;
+}
+
+#prenota-button {
+  width: 130px;
+  text-align: center;
+  margin: 20px;
+  padding: 20px 10px;
+  font-weight: bold;
+  background-color: #F7EBC9; /* crema chiaro */
+  border-radius: 5px;
+}
+
+#prenota-button:hover {
+  background-color: #F2CC96;  /* crema scuro */
+}
+
+.menu-hide {
+  display: none;
+}
+
+.menu-show {
+  display: block; 
+  background-color: white; 
+  position: absolute;
+  top: 150px;
+  width: 100%;  
+}
+
+.menu-line, .title-room {
+  display: block;
+  padding: 20px 10px;
+  font-size: 25px;
+  border-radius: 5px;
+}
+
+#second-line {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#cell-rooms, #hamburger {
+  margin: 1px 5px;
+  width: 80px;
+}
+
+#decoration {
+  height: 20px;
+  width: 60%;
+  margin: auto;
+  border-bottom: 3px solid #D35823;  /* arancione */
+  border-left: 3px solid #D35823;  /* arancione */
+  border-right: 3px solid #D35823;  /* arancione */
+}
+
+/* slide show */
+
+.my-slides {
+  display: none;
+}
+
+.my-image {
+  vertical-align: middle;
+  width: 100%;
+  height: 250px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: auto;
+  top: 150px;
+}
+
+/* text on images */
+.text-slide {
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+
+/* next and previous buttons */
+
+#prev, #next {
+  cursor: pointer;
+  position: absolute;
+  top: 0%;
+  width: auto;
+  padding: 113px 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+
+#next {
+  right: 0;
+}
+
+#prev:hover, #next:hover {
+  background-color: rgb(0, 0, 0, 0.5);
+}
+
+/* The dots */
+
+.dot-block {
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  margin: 0 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot:hover {
+  background-color: #717171;
+}
+
+/* main section */
+
+#main-first-page {
+  position: relative;
+  top: 230px;
+}
+
+.title-h1-first-page {
+  text-align: center;
+}
+
+.title-h1 {
+  text-align: center;
+  padding: 180px 20px 20px 20px;
+}
+
+.text-h2 {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.text-p {
+  text-align: center;
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #F7EBC9; /* crema chiaro */
+  border-radius: 20px;
+}
+
+.my-img {
+  width: 100%;
+}
+
+.fotos {
+  text-align: center;
+}
+.fotos img {
+  width: 80%;
+}
+
+.img-circular {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 10px;
+}
+
+.img-circular img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.text-p-first-page {
+  margin: -110px auto 30px auto;
+  padding: 100px 5px 10px 5px;
+  width: 90%;  
+  font-size: 18px;
+  background: linear-gradient(to top, #F7EBC9, white);  
+}
+
+.button-center {
+  width: 80%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.prenota-button-main {
+  margin: 20px;
+  padding: 20px 10px;
+  font-weight: bold;
+  background-color: #F7EBC9; /* crema chiaro */
+  border-radius: 5px;
+}
+
+.prenota-button-main:hover, .prenota-button-main:active {
+  background-color: #F2CC96;  /* crema scuro */
+}
+
+/* services page */
+
+.box-service {
+  padding: 10px 0;
+}
+
+.img-service {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.text-service {
+  margin: -120px auto 30px auto;
+  padding: 150px 5px 10px 5px;
+  width: 90%;  
+  font-size: 18px;
+  border-radius: 20px;
+  color: #F7EBC9; /* crema chiaro */
+  background: linear-gradient(to top, #814906, white); 
+}
+
+/* section gallery */
+
+.container-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.img-grid {
+  width: 40%;
+  cursor: pointer;
+  border: 5px solid transparent;
+  background: linear-gradient(to top, #814906, #D35823);
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.img-grid:hover {
+  background: #F7EBC9; /* crema chiaro */
+}
+
+#gallery {
+  display: none;
+  position: fixed;
+	z-index: 999;
+	padding-top: 50px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(0, 0, 0, 0.7);
+}
+
+.modal-content {
+	position: relative;
+	background-color: #000000;
+	margin: 20px auto;
+	padding: 0;
+	width: 90%; 
+	height: 300px; 
+}
+
+/*  the coss to close the gallery  */
+
+.close {
+	color: white;
+	position: absolute;
+	top: 10px;
+	right: 25px;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+  height: 300px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* pulsanti next e previous */
+
+#prev-grid, #next-grid {
+  cursor: pointer;
+  position: absolute;
+  top: 50px;
+  width: auto;
+  padding: 138px 20px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+}
+
+/* posizione del pulsante next */
+
+#next-grid {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+#prev-grid:hover, #next-grid:hover {
+  background-color: rgb(0, 0, 0, 0.8);
+}
+
+/* tarif */
+
+.tarif-h2 {
+  margin: 10px;
+  padding: 10px;
+}
+
+.table-price {
+  margin: 0 auto 50px auto;
+}
+
+td {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.additional-cost {
+  padding: 20px;
+  width: 70%;
+  margin: 10px auto 20px auto;
+  border: 5px solid #D35823; /*arancione*/
+}
+
+.img-tarif img {
+  width: 100%;
+}
+
+.img-tarif {
+  text-align: center;
+}
+
+/* room */
+
+.img-rooms img {
+  width: 100%;
+}
+
+.rooms-text {
+  width: 80%;
+  margin: auto;
+  padding: 40px;
+  border-radius: 30%;
+  background: linear-gradient(to top, #F7EBC9, white);
+}
+
+/* form section - contact */
+
+.text-form {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.text-form-center {
+  text-align: center;
+  margin: 10px;
+}
+
+.container-form {
+  width: 80%;
+  margin: auto;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  height: 30px;
+}
+
+label {
+  display: block;
+}
+
+.data-block {
+  width: 45%;
+  margin: 0 5px;
+}
+
+.date-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.options-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 10px;
+  border: 1px solid black;
+}
+
+.room-box {
+  margin: 5px;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.red-point {
+  color: red;
+}
+
+.input-invia {
+  background-color: #F7EBC9;  /* crema chiaro */
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  margin: 5px auto 20px auto;
+  cursor: pointer;
+  border-color: transparent;
+}
+
+.input-invia:hover {
+  border-color: #F2CC96;  /* crema scuro */
+}
+
+.button {
+  text-align: center;
+}
+
+.text-h3 {
+  padding: 20px;
+}
+
+.map {
+  text-align: center;
+  margin: 20px;
+}
+
+.map img {
+  width: 80%;
+}
+
+/* footer */
+
+.space {
+  width: 100%;
+  height: 220px;
+}
+
+footer {
+  width: 100%;
+  padding-bottom: 20px;
+  background-color: #D35823;  /* arancione */
+  text-align: center;
+}
+
+footer img {
+  width: 50px;
+}
+
+footer p {
+  color: #F2CC96;  /* crema scuro */
+}
+
+.menu-footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+}
+
+.menu-footer a {
+  color: #F7EBC9;  /* crema chiaro */
+  padding: 10px;
+  background-color: transparent;
+  font-size: 15px;
+  width: initial;
+}
+
+.contact-footer {
+  margin-bottom: 20px;
+}
+
+.footer-line {
+  color: #F7EBC9;  /* crema chiaro */
+}
+
+/*screen bigger than 768 px */
+@media screen and (min-width: 768px) {
+  
+  /* navbar */ 
+  
+  nav {
+    justify-content: space-between;  
+  }
+  .logo {
+    padding-left: 50px;
+  }
+  
+  /* menu */ 
+  
+  #hamburger {
+    display: none;
+  }
+  #cell-rooms {
+    display: none;
+  }
+  .menu-hide {
+    display: block;
+  }
+  #menu {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    margin: -80px auto 5px auto;
+  }
+  #rooms-menu {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    margin: auto;
+  }
+  .menu-line {
+    width: 150px;
+    margin: 10px;
+    padding: 1px;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgb(255, 255, 255, 0.5);
+  }
+  .menu-line:hover {
+    background-color: #DE834D; /*arancione*/
+    color: white;
+  }
+  .title-room {
+    margin: 5px;
+    padding: 5px 20px;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255, 0.5);
+    color: #814906; /* marrone */ 
+  }
+  .title-room:hover {
+    background-color: #DE834D; /*arancione*/
+    color: white;
+  }
+  .header {
+    background-color: transparent;
+  }
+  #white {
+    background-color: white;
+  }
+  
+  /* slide show */
+  
+  .my-image {
+    height: 500px;
+  }
+  .slideshow-container {
+    top: 0;
+  }
+  #prev, #next {
+    padding: 238px 50px;
+  }
+  .dot-block {
+    bottom: -30px;
+  } 
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+  }
+  /* main section */
+  #main-first-page {
+    top: 50px;
+  }
+  .img-circular img {
+    width: 300px;
+  }
+  /* services */
+  .box-service {
+    text-align: center;
+  }
+  .img-service {
+    width: 80%;
+  }
+  /* gallery */
+  .modal-content {
+    width: 60%;
+    height: 400px;
+  }
+  .mySlides {
+    width: 100%;
+    height: 400px; 
+  }
+  #prev-grid, #next-grid {
+    padding: 187px 50px;
+  }
+  /* tarif */
+  .tarif-h2 {
+    margin: 10px 10px 10px 250px;
+    padding: 10px;
+  }
+  .additional-cost {
+    width: 50%;
+  }
+  /* footer */
+  .space {
+    height: 50px;
+  }
+  /* contact */
+  .input-invia {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+  }
+  .room-box {
+    margin: 5px 30px;
+  }
+}
