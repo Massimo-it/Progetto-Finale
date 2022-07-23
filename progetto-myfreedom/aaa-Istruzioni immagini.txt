@@ -1,4 +1,0 @@
-- dimensioni immagini grandi per slideshow: larghezza 900px, altezza 500px;
-
-- dimensioni immagini piccole per scelta: larghezza 300px, altezza 200px;
-
