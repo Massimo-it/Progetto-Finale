@@ -1,0 +1,461 @@
+/* GESTIONE PRENOTAZIONI */
+
+/* colours palette */
+/*
+#3d5a80 - dark blue
+#98c1d9 - heavenly = celeste
+#e0fbfc - light heavenly = celestino chiaro
+#ee6c4d - red
+#293241 - dark dark blue
+*/
+
+/* pagina login.php */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, sans-serif;
+  color: #293241;  /* dark dark blue */
+}
+
+h1, h2, h3 {
+  padding: 10px;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.space {
+  width: 100%;
+  height: 70vw;
+}
+
+.space-rooms {
+  width: 100%;
+  height: 400px;
+}
+
+.light-blue {
+  background-color: #e0fbfc; /* - light heavenly = celestino chiaro */
+}
+
+.title-h1 {
+  background-color: #3d5a80; /* - dark blue */
+  color: #e0fbfc; /* - light heavenly = celestino chiaro */
+}
+
+.title-h2 {
+  color: #ee6c4d; /* - red */
+}
+
+.title-h3 {
+  color: #3d5a80; /*  - dark blue */
+}
+
+.center-text {
+  text-align: center;
+}
+
+.login-form {
+  width: 70%;
+  margin: 20px auto;
+  padding: 30px 50px;
+  background-color: #e0fbfc; /* - light heavenly = celestino chiaro */
+  font-size: 20px;
+}
+
+.login-form label {
+  text-align: left;
+}
+
+.login-form input {
+  height: 40px;
+  width: 100%;
+}
+
+.login-form a {
+  font-size: 13px;
+  padding: 30px 5px;
+  display: block;
+  text-align: center;
+}
+
+.light-btn {
+  font-size: 23px;
+  padding: 5px;
+  margin: 5px;
+  background-color: #3d5a80; /* - dark blue */
+  color: #e0fbfc; /* - light heavenly = celestino chiaro */
+  border: none; /*solid 5px #ee6c4d; /* - red */
+  padding: 10px 20px;
+  display: block;
+  margin: auto;
+}
+
+.light-btn:hover {
+  background-color: #ee6c4d; /* - red */
+  color: #e0fbfc; /* - light heavenly = celestino chiaro */
+  cursor: pointer;
+}
+
+/* page controlpanel.php */
+
+main {
+  margin: 10px auto;
+}
+
+.rooms div {
+  margin: 10px auto;
+  width: 200px;
+  height: 100px;
+}
+
+.rooms div a {
+  text-decoration: none;
+  color: white;
+  padding: 30px 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: block;
+  text-align: center;
+  position: relative;
+  top: 10px;
+}
+
+.room1 a {
+  background-image: linear-gradient(-180deg, #9999ff 0%, #000099 100%);
+	box-shadow: 
+							0 -0.25rem 1.5rem rgba(255, 255, 255, 1) inset,
+							0 0.25rem 0.5rem rgba(255,255,255, 0.4) inset,
+							0 0.25rem 0.5rem 0 rgba(255, 255, 255, 1) inset;
+  border: 2px solid #3d5a80; /* dark blue */
+}
+
+.room2 a {
+  background-image: linear-gradient(-180deg, #8cd98c 0%, #206020 100%);
+	box-shadow: 
+							0 -0.25rem 1.5rem rgba(255, 255, 255, 1) inset,
+							0 0.25rem 0.5rem rgba(255,255,255, 0.4) inset,
+							0 0.25rem 0.5rem 0 rgba(255, 255, 255, 1) inset;
+  border: 2px solid #3d5a80; /* dark blue */
+}
+
+.room3 a {
+  background-image: linear-gradient(-180deg, #ffbf80 0%, #cc6600 100%);
+	box-shadow: 
+							0 -0.25rem 1.5rem rgba(255, 255, 255, 1) inset,
+							0 0.25rem 0.5rem rgba(255,255,255, 0.4) inset,
+							0 0.25rem 0.5rem 0 rgba(255, 255, 255, 1) inset;
+  border: 2px solid #3d5a80; /* dark blue */
+}
+
+.customers div {
+  margin: 10px auto;
+  width: 200px;
+  height: 100px;
+}
+
+.customers div a {
+  text-decoration: none;
+  padding: 30px 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: block;
+  text-align: center;
+  position: relative;
+  top: 10px;
+  background-image: linear-gradient(-180deg, #ffff80 0%, #999900 100%);
+	box-shadow: 
+							0 -0.25rem 1.5rem rgba(255, 255, 255, 1) inset,
+							0 0.25rem 0.5rem rgba(255,255,255, 0.4) inset,
+							0 0.25rem 0.5rem 0 rgba(255, 255, 255, 1) inset;
+  border: 2px solid #ee6c4d; /* red */
+}
+
+/* rooms */
+
+.title-room1 {
+  color: #e0fbfc; /* - light heavenly = celestino chiaro */
+  background-image: linear-gradient(-180deg, #9999ff 0%, #000099 100%);
+	box-shadow: 
+							0 -0.25rem 1.5rem rgba(255, 255, 255, 1) inset,
+							0 0.25rem 0.5rem rgba(255,255,255, 0.4) inset,
+							0 0.25rem 0.5rem 0 rgba(255, 255, 255, 1) inset;
+}
+
+.title-room2 {
+  color: #e0fbfc; /* - light heavenly = celestino chiaro */
+  background-image: linear-gradient(-180deg, #8cd98c 0%, #206020 100%);
+	box-shadow: 
+							0 -0.25rem 1.5rem rgba(255, 255, 255, 1) inset,
+							0 0.25rem 0.5rem rgba(255,255,255, 0.4) inset,
+							0 0.25rem 0.5rem 0 rgba(255, 255, 255, 1) inset;
+}
+
+.title-room3 {
+  color: #e0fbfc; /* - light heavenly = celestino chiaro */
+  background-image: linear-gradient(-180deg, #ffbf80 0%, #cc6600 100%);
+	box-shadow: 
+							0 -0.25rem 1.5rem rgba(255, 255, 255, 1) inset,
+							0 0.25rem 0.5rem rgba(255,255,255, 0.4) inset,
+							0 0.25rem 0.5rem 0 rgba(255, 255, 255, 1) inset;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #3d5a80; /* - dark blue */
+}
+
+.btn-header {
+  font-size: 23px;
+  padding: 5px;
+  margin: 5px;
+  background-color: #e0fbfc; /* - light heavenly = celestino chiaro */
+  color: #3d5a80; /* - dark blue */
+  border: none; 
+}
+
+.btn-header:hover {
+  background-color: #ee6c4d; /* - red */
+  color: #e0fbfc; /* - light heavenly = celestino chiaro */
+  cursor: pointer;
+}
+
+/* calendar */
+
+.btn-primary {
+  text-decoration: none;
+  padding: 5px;
+  margin: 10px 0;
+  color: white;
+  background-color: #3d5a80; /* - dark blue */
+}
+
+.btn-central {
+  text-decoration: none;
+  padding: 5px;
+  margin: 10px;
+  color: white;
+  background-color: #ee6c4d; /* - red */
+}
+
+.month {
+  padding: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: white;
+}
+
+.center {
+  width: 95%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+table {
+  table-layout: auto;
+  margin: auto;
+}
+
+th {
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+  font-size: 13px;
+}
+
+td {
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.border-top {
+  border-top: 10px solid white;
+}
+.morning-noon {
+  font-size: 10px;
+}
+
+.link-canc {
+  text-decoration: none;
+}
+
+.today {
+  background-color: yellow;
+  border: 2px solid white;
+  box-shadow: 2px 2px grey;
+}
+
+.sunday {
+  color: red;
+}
+
+.free {
+  background-color: #e6ffe6; /* lightgreen */
+}
+
+.not-free {
+  background-color: pink;
+}
+
+/* pagina customerList */
+
+.customer-table {
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background-color: #cccc00; /* dark yellow */
+}
+
+.customer-table td {
+  background-color: #ffffb3; /* light yellow */
+  color: #293241; /* dark dark blue */
+  border: 1px solid black;
+}
+
+.customer-title {
+  width: 150px;
+}
+
+
+/* pagina customerAdd */
+
+.light-yellow {
+  background-color: #ffffb3;
+  color: #cccc00;
+}
+
+.section-new-customer {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.label-customer {
+  display: block;
+  padding: 10px 10px 3px 10px;
+}
+
+.box-form input {
+  margin: 10px;
+  width: 90%;
+}
+
+/* pagina customerCancel */
+
+.cancel-table {
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background-color: red;
+}
+
+.cancel-table td {
+  background-color: #ffb3b3; /* pink */
+  color: #293241; /* dark dark blue */
+  border: 1px solid black;
+}
+
+.light-red {
+  background-color: #ff0000;
+  color: #800000;
+}
+
+.box-form-cancel input {
+  margin: 10px;
+  width: 90%;
+}
+
+.result {
+  text-align: center;
+  color: red;
+  padding: 10px;
+  margin: 10px;
+  font-style: bold;
+  font-size: 20px;
+}
+
+/* pagina reservation */
+
+.section-reservation {
+  margin: 20px 10px;
+}
+
+.form-style {
+  background-color: #e0fbfc; /* - light heavenly = celestino chiaro */
+  padding: 20px 10px;
+}
+
+.light-green {
+  background-color: #99e699;
+  color: #145214;
+}
+
+/*screen bigger than 768 px */
+@media screen and (min-width: 768px) {
+  th {
+    font-size: 18px;
+  }
+  .space {
+    height: 150px;
+  }
+  .space-rooms {
+    height: 260px;
+  } 
+  /* page reservation */
+  .section-reservation {
+    margin: 30px;
+  }
+  /* control panel */
+  .rooms div {
+    margin: 10px;
+  }
+  .rooms {
+    display:flex;
+    justify-content: center;
+  }
+  .customers {
+    display:flex;
+    justify-content: center;
+  }
+  .customers div {
+    margin: 10px;
+  }
+  /* customer list */
+  .customer-table {
+    width: 60%;
+  }
+  /* customer add */
+  .box-form input {
+    width: 70%;
+  }
+  /* customer change */
+  .box-form-cancel {
+    width: 80%;
+    margin: auto;
+  }
+  .box-form-cancel input {
+    width: 100%;
+    margin: 0;
+  }
+  /* customer cancel */
+  .cancel-table {
+    width: 60%;
+  }
+  /* login */
+  .title {
+    width: 70%;
+    margin: auto;
+  }
+  .login-form input {
+    font-size: 20px;
+  }
+}

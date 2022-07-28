@@ -1,0 +1,290 @@
+/* progetto my freedom */
+
+/* tavolozza dei colori:
+
+#006D77; Ming = blu scuro
+#E29578; Dark Salmon 
+#EDF6F9; Alice Blue = celeste
+
+*/
+
+
+
+* {
+	box-sizing: border-box;
+  margin: 0;
+  font-family: verdana;
+  color: #006D77; /* Ming */
+}
+
+a:link {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* header */
+
+.headerC {
+  background-color: #fff;
+  width: 100%;
+  height: 50px;
+  z-index: 3;
+}
+
+.headerC li a {
+  color: #006D77; /* Ming */
+  padding: 20px 50px;
+  display: block;
+}
+
+.headerC li {
+  display: block;
+}
+
+.headerC li a:hover, .logo:hover {
+  color: #E29578; /* Dark Salmon */
+}
+
+.logoImg {
+  width: 50px;
+  height: 50px;
+}
+
+.logo {
+  font-weight: bold;
+  padding: 10px 0 10px 20px;
+}
+
+/* sidebar Nav */
+
+.menuNav {
+  list-style: none;
+  position: fixed;
+  top: 80px;
+  background: white;
+  left: 0;
+  width: 0;
+  overflow: hidden;
+  z-index: 9;
+}
+
+.position {
+  display: block;
+  padding: 10px;
+}
+
+.menuNav.showMenu {
+  width: 100%;
+  height: 150px;
+}
+
+/* menu */
+
+
+.menuShow {
+  display: block;
+}
+
+.menuHide {
+  display: none;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* menu icon */
+
+#openClose {
+  width: 100px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px 5px;
+  margin: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-color: #E29578;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+
+/* home section */
+
+.homeSection {
+  margin: 60px 45px 5px 45px;
+}
+
+.image-container img {
+  width: 80%;
+}
+
+.image-container {
+  text-align: center;;
+}
+
+.each-img {
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border: 1px solid #EDF6F9; /*Alice Blue */
+  box-shadow: 3px 3px 3px #EDF6F9; /*Alice Blue */
+}
+
+h1 {
+  padding: 10px;
+  text-align: center;
+}
+
+/* description section */
+
+h2, h3 {
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+  text-shadow: 5px 5px 2px #cccccc;
+}
+
+#description {
+  margin: 60px 45px 10px 45px;
+}
+
+.descriptionBlock {
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #EDF6F9; /*Alice Blue */
+  box-shadow: 3px 3px 3px #EDF6F9; /*Alice Blue */
+  border-radius: 20px;
+}
+
+.boxText {
+  padding: 10px;
+}
+
+.boxText-h4 {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.smallerAnte {
+  width: 25%;
+}
+
+.smallerPost {
+  width: 55%;
+}
+
+.smallerAnte, .smallerPost {
+  padding: 10px;
+  margin-bottom: 10px;
+  line-height: 30px;
+}
+
+.containerFlex {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #EDF6F9; /*Alice Blue */
+}
+
+.icons {
+  padding: 10px;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+/* equipment section */
+
+#equipment {
+  margin: 60px 45px 10px 45px;
+}
+
+/* contact section */
+
+#contact {
+  margin: 60px 45px 10px 45px;
+}
+
+.map {
+  width: 100%;
+  margin: auto;
+  padding: 20px 10px;
+}
+
+#center {
+  width: 80%;
+  margin: auto;
+}
+
+.figcaption {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.button {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.email {
+  background-color: #EDF6F9; /*Alice Blue */
+  border: #EDF6F9; /*Alice Blue */
+  padding: 20px;
+  text-decoration: none;
+}
+
+.email:hover {
+  background-color: #E29578; /* Dark Salmon */
+}
+
+/* footer */
+
+footer {
+  margin-top: 20px;
+  height: 70px;
+  background-color: #EDF6F9; /*Alice Blue */
+}
+
+.textFooter {
+  text-align: center;
+  padding-top:10px;
+  font-size: 10px;
+}
+
+
+/* for wider devices */
+
+@media screen and (min-width: 768px) {
+  #openClose {
+    display: none;
+  }
+  .navBar {
+    position: static;
+  }
+  .menuNav {
+    width: auto;
+    margin: 10px 0;
+    position: static;
+    display: flex;
+    justify-content: center;
+  }
+  .headerC li a {
+  padding: 10px 40px;
+}
+  .containerSlides {
+    width: 600px;
+    margin: auto;
+  }
+  .slide img {
+    height: 300px;
+  }
+}
+

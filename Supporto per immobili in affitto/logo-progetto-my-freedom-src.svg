@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="82.020836mm"
+   height="82.020836mm"
+   viewBox="0 0 82.020836 82.020836"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="logo-progetto-my-freedom-src.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.6572815"
+     inkscape:cx="208.47394"
+     inkscape:cy="150.84945"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Livello 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-62.743322,-178.42574)">
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ee6c4d;stroke-width:2.64583;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect880"
+       width="79.375"
+       height="79.375"
+       x="64.066238"
+       y="179.74866"
+       ry="11.819004"
+       rx="11.819004" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px;fill:#293241;fill-opacity:1;stroke-width:0.264583"
+       x="74.055107"
+       y="192.82124"
+       id="text5564"><tspan
+         sodipodi:role="line"
+         id="tspan5562"
+         style="fill:#293241;fill-opacity:1;stroke-width:0.264583"
+         x="74.055107"
+         y="192.82124">PROGETTO</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.7722px;line-height:1.25;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;fill:#e62361;fill-opacity:1;stroke-width:0.819308"
+       x="87.425652"
+       y="214.06941"
+       id="text11900"
+       transform="scale(0.96185595,1.0396567)"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.7722px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#e62361;fill-opacity:1;stroke-width:0.819308"
+         x="87.425652"
+         y="214.06941"
+         id="tspan13786">MY</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.6325px;line-height:1.25;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;fill:#e62361;fill-opacity:1;stroke-width:0.615817"
+       x="100.57627"
+       y="169.10291"
+       id="text11900-7"
+       transform="scale(0.67619555,1.4788621)"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.6325px;font-family:'Lucida Console';-inkscape-font-specification:'Lucida Console, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#e62361;fill-opacity:1;stroke-width:0.615817"
+         x="100.57627"
+         y="169.10291"
+         id="tspan13786-4">FREEDOM</tspan></text>
+  </g>
+</svg>
