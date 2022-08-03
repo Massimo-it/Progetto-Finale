@@ -22,7 +22,7 @@ function Navbar() {
         <HashRouter>
           <header className="headerC">
             <div className="headerContainer">
-              <NavLink to="/home" onClick={() => closeMenu()} className="logo"><img className="logoImg" src={Logo} /> My Freedom</NavLink>
+              <NavLink to="/" onClick={() => closeMenu()} className="logo"><img className="logoImg" src={Logo} /> My Freedom</NavLink>
             </div>
           </header>
           <nav className="navBar">
@@ -31,16 +31,14 @@ function Navbar() {
                 <li><NavLink to="/description" className="position" onClick={() => closeMenu()}>Descrizione</NavLink></li>
                 <li><NavLink to="/equipment" className="position" onClick={() => closeMenu()}>Dotazioni</NavLink></li>
                 <li><NavLink to="/contact" className="position" onClick={() => closeMenu()}>Contatti</NavLink></li>
-                <li><NavLink to="/home" onClick={() => closeMenu()}></NavLink></li>
               </ul>
               <div>
                 <Route path="/description" component={Description} />
                 <Route path="/equipment" component={Equipment} />
                 <Route path="/contact" component={Contact} />
-                <Route path="/home" component={Home} />
+                <Route exact path="/" component={Home} />
               </div>
           </nav>     
-          <Home />
         </HashRouter>
       );
 }
