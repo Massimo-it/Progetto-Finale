@@ -1,8 +1,9 @@
 <?php
 
 require 'include/coonProcedurale.php';
+require 'include/conn.php';
     
-$sql = "DELETE FROM utentiloggati";
+$sql = "DELETE FROM logged";
 
 if (mysqli_query($conn, $sql)) {
   session_destroy();
