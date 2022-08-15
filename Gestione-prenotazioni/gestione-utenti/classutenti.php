@@ -26,7 +26,7 @@ class UserManagement {
     }
     // check if the username is not already present into the DB
     try {
-      $query = "SELECT * FROM utenti WHERE (username = :cleanUser)";
+      $query = "SELECT * FROM users WHERE (username = :cleanUser)";
       $rq = $this->PDO->prepare($query);
       $rq->bindParam(":cleanUser", $cleanUser, PDO::PARAM_STR);
       $rq->execute();
@@ -56,7 +56,7 @@ class UserManagement {
       $passwordHash = password_hash($cleanPassword, PASSWORD_DEFAULT);
       // now we can launch the query
       try {
-        $query = "INSERT INTO utenti (username, password) VALUES (:uname, :password)";
+        $query = "INSERT INTO users (username, password) VALUES (:uname, :password)";
         $rq = $this->PDO->prepare($query);
         $rq->bindParam(":uname", $cleanUser, PDO::PARAM_STR);
         $rq->bindParam(":password", $passwordHash, PDO::PARAM_STR);
@@ -73,7 +73,7 @@ class UserManagement {
   
   public function utentiList() {
     try {
-      $query = "SELECT utenti.ID, utenti.username FROM utenti";
+      $query = "SELECT ID, username FROM users";
       $rq = $this->PDO->prepare($query);
       $rq->execute();
       return $rq;
@@ -86,7 +86,7 @@ class UserManagement {
   
   public function cancelUser($userToCancel) {   
     try { 
-    $query = "DELETE FROM utenti WHERE ID = :id";
+    $query = "DELETE FROM users WHERE ID = :id";
     $rq = $this->PDO->prepare($query);
     $rq->bindParam(":id", $userToCancel, PDO::PARAM_STR);
     $rq->execute();
@@ -94,7 +94,7 @@ class UserManagement {
         echo "Errore di inserimento nel DB" . $e->getMessage();
     }
     try {
-    $query = "DELETE FROM utentiloggati WHERE id_logged = :id";
+    $query = "DELETE FROM logged WHERE idlogged = :id";
     $rq = $this->PDO->prepare($query);
     $rq->bindParam(":id", $userToCancel, PDO::PARAM_STR);
     $rq->execute();
@@ -130,7 +130,7 @@ class UserManagement {
     $passwordHash = password_hash($cleanPassword, PASSWORD_DEFAULT);
     // now we can launch the query
     try {
-    $query = "UPDATE utenti SET password=:password WHERE ID = '$user'"; //$user is not an input, sanitize not necessary
+    $query = "UPDATE users SET password=:password WHERE ID = '$user'"; //$user is not an input, sanitize not necessary
     $rq = $this->PDO->prepare($query);
     $rq->bindParam(":password", $passwordHash, PDO::PARAM_STR);
     $rq->execute();
@@ -150,7 +150,7 @@ class UserManagement {
     $username = filter_var($username, FILTER_SANITIZE_STRING);
     // query
     try {
-      $query = "SELECT * FROM utenti WHERE username = :username";
+      $query = "SELECT * FROM users WHERE username = :username";
       $rq = $this->PDO->prepare($query);
       $rq->bindParam(":username", $username, PDO::PARAM_STR);
       $rq->execute();
@@ -166,18 +166,18 @@ class UserManagement {
 
        (password_verify($password, $record['password'])) {
         
-          try {     //before login clean table utentiloggati
-            $query = "DELETE FROM utentiloggati";  //sanitize not necessary
+          try {     //before login clean table logged
+            $query = "DELETE FROM logged";  //sanitize not necessary
             $rq = $this->PDO->prepare($query);
             $rq->execute();
             } catch(PDOException $e) {
                 echo "Errore di inserimento nel DB" . $e->getMessage();
             }
-            // the password is OK we can activate the session and register the user in utentiloggati
+            // the password is OK we can activate the session and register the user in logged
           $sessionid = session_id();
           $_SESSION ["colore"] = "verde";
           $userid = $record['ID'];
-          $query = "INSERT INTO utentiloggati (sessionid, idlogged) VALUES (:sessionid, :userid)";
+          $query = "INSERT INTO logged (sessionid, idlogged) VALUES (:sessionid, :userid)";
           $rq = $this->PDO->prepare($query);
           $rq->bindParam("sessionid", $sessionid, PDO::PARAM_STR);
           $rq->bindParam("userid", $userid, PDO::PARAM_INT);
@@ -196,9 +196,9 @@ class UserManagement {
   
   // methods to manage the logout
   
-  public function logout() {   // we must cancel the user from the table utentiloggatitodo
+  public function logout() {   // we must cancel the user from the table
     try {
-      $query = "DELETE FROM utentiloggati";
+      $query = "DELETE FROM logged";
       $rq = $this->PDO->prepare($query);
       //$session_id = session_id();
       //$rq->bindParam(":sessionid", $session_id, PDO::PARAM_STR);

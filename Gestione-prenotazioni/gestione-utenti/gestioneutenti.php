@@ -70,7 +70,7 @@ if (isset($_GET['delete'])) {
     
       <?php
       
-      $url = "http://localhost/progetto-immobili/gestione-prenotazioni/gestione-utenti/elencoutenti-api.php";
+      $url = "http://localhost/progetto-finale/gestione-prenotazioni/gestione-utenti/elencoutenti-api.php";
       $client = curl_init($url);
       curl_setopt($client,CURLOPT_RETURNTRANSFER,true);
       $response = curl_exec($client);
