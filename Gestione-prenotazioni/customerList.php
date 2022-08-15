@@ -54,7 +54,7 @@ if ($_POST != "") {
     
   <?php
 
-    $url = "http://localhost/progetto-immobili/gestione-prenotazioni/customerList-api.php";
+    $url = "http://localhost/progetto-finale/gestione-prenotazioni/my-api/customerList-api.php";
     $client = curl_init($url);
     curl_setopt($client,CURLOPT_RETURNTRANSFER,true);
     $response = curl_exec($client);
@@ -64,9 +64,9 @@ if ($_POST != "") {
     foreach($result as $key) {
       echo "<table class='center-text customer-table'>";
       echo "<tr><th class='customer-title'>ID</th><td>" . $key['ID'] . "</td></tr>";
-      echo "<tr><th>NOME</th><td>" . $key['nome'] . "</td></tr>";
-      echo "<tr><th>EMAIL</th><td>" . $key['email'] . "</td></tr>";
-      echo "<tr><th>NOTE</th><td>" . $key['note'] . "</td></tr>";
+      echo "<tr><th>NOME</th><td>" . $key['customer_name'] . "</td></tr>";
+      echo "<tr><th>EMAIL</th><td>" . $key['customer_email'] . "</td></tr>";
+      echo "<tr><th>NOTE</th><td>" . $key['customer_text'] . "</td></tr>";
       
       $xx = $key['ID'];
       

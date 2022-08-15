@@ -72,7 +72,7 @@ if ($_POST != "") {
             $cleanPsw1 = trim(htmlspecialchars($newPsw1));
             
             require 'include/coonProcedurale.php';
-            $sql = "SELECT * FROM utenti WHERE username = '$cleanUser'";
+            $sql = "SELECT * FROM users WHERE username = '$cleanUser'";
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) == 0) {
               echo "<script>alert('User inesistente');</script>";
@@ -97,7 +97,7 @@ if ($_POST != "") {
                       // encript the password
                       $passwordHash = password_hash($cleanPsw, PASSWORD_DEFAULT);
                       require 'include/coonProcedurale.php';
-                      $sql = "UPDATE utenti SET password = ? WHERE username = '$cleanUser'";
+                      $sql = "UPDATE users SET password = ? WHERE username = '$cleanUser'";
                       if($stmt = mysqli_prepare($conn, $sql)){
                                                                       //if (mysqli_query($conn, $sql)) {
                         mysqli_stmt_bind_param($stmt, "s", $passwordHash);

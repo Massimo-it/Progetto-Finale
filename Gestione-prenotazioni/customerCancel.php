@@ -59,7 +59,7 @@ if ($_POST != "") {
         require 'include/coonProcedurale.php';
         if (isset($_GET['delete'])) {
           $idCancel = $_GET['delete'];
-          $sql = "SELECT * FROM clienti WHERE ID = ?";
+          $sql = "SELECT * FROM customers WHERE ID = ?";
             
           $record = mysqli_prepare($conn,$sql);
           mysqli_stmt_bind_param($record,'s',$idCancel);
@@ -67,9 +67,9 @@ if ($_POST != "") {
           $result = mysqli_stmt_get_result($record);
           
           while ($row = mysqli_fetch_assoc($result)) {
-            $customerName = $row['nome'];
-            $customerEmail = $row['email'];
-            $customerNote = $row['note'];
+            $customerName = $row['customer_name'];
+            $customerEmail = $row['customer_email'];
+            $customerNote = $row['customer_text'];
             echo "<tr><th>ID</th><td id='idCancel'>" . $row['ID'] . "</td></tr>";
             echo "<tr><th>NOME</th><td id='nameCancel'>" . $customerName . "</td></tr>";
             echo "<tr><th>EMAIL</th><td>" . $customerEmail . "</td></tr>";
@@ -105,7 +105,7 @@ if ($_POST != "") {
         
       // Creating a XHR object
       let xhr = new XMLHttpRequest();
-      let url = "customerCancel-api.php";
+      let url = "./my-api/customerCancel-api.php";
  
       // open a connection
       xhr.open("POST", url, true);

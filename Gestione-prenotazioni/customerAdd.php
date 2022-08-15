@@ -91,7 +91,7 @@ if ($_POST != "") {
       
       // Creating a XHR object
       let xhr = new XMLHttpRequest();
-      let url = "customeradd-api.php";
+      let url = "./my-api/customeradd-api.php";
  
       // open a connection
       xhr.open("POST", url, true);

@@ -54,7 +54,7 @@ if ($_POST != "") {
     
     require_once 'include/coonProcedurale.php';
     $room2 = "room-2";
-    $sql = "SELECT * FROM prenotazioni WHERE camera=?";
+    $sql = "SELECT * FROM customer_reservation WHERE room=?";
     
     $record = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($record, 's',$room2);
@@ -71,10 +71,10 @@ if ($_POST != "") {
       // output data of each row
       while($row = mysqli_fetch_assoc($result)) {
         $IDReservation = $row['IDPr'];
-        $customerName = $row['cliente'];
-        $roomBusy = $row['camera'];
-        $dateFrom = $row['dataDa'];
-        $dateTo = $row['dataA'];
+        $customerName = $row['customer'];
+        $roomBusy = $row['room'];
+        $dateFrom = $row['from_date'];
+        $dateTo = $row['to_date'];
       
         $begin = new DateTime( $dateFrom );
         $end   = new DateTime( $dateTo );

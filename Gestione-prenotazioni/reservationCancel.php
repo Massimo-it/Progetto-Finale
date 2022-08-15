@@ -56,7 +56,7 @@ if ($_POST != "") {
         // take from DB the reservation to be cancelled
         
         require 'include/coonProcedurale.php';
-        $sql = "SELECT * FROM prenotazioni WHERE IDPr = ?";
+        $sql = "SELECT * FROM customer_resevation WHERE IDPr = ?";
         $record = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($record, 'i',$IDReservation);
         mysqli_stmt_execute($record);
@@ -66,10 +66,10 @@ if ($_POST != "") {
           // output data of each row
           while($row = mysqli_fetch_assoc($result)) {
             echo "<tr><th>ID</th><td>" . $row['IDPr'] . "</td></tr>";
-            echo "<tr><th>Cliente</th><td>" . $row['cliente'] . "</td></tr>";
-            echo "<tr><th>Camera</th><td>" . $row['camera'] . "</td></tr>";
-            echo "<tr><th>data da</th><td>" . $row['dataDa'] . "</td></tr>";
-            echo "<tr><th>data a</th><td>" . $row['dataA'] . "</td></tr>"; 
+            echo "<tr><th>Cliente</th><td>" . $row['customer'] . "</td></tr>";
+            echo "<tr><th>Camera</th><td>" . $row['room'] . "</td></tr>";
+            echo "<tr><th>data da</th><td>" . $row['from_date'] . "</td></tr>";
+            echo "<tr><th>data a</th><td>" . $row['to_date'] . "</td></tr>"; 
           }
         } else {
           echo "0 results";
@@ -84,7 +84,7 @@ if ($_POST != "") {
           
           if (isset($_POST['cancel'])) {
             require 'include/coonProcedurale.php';
-            $sql = "DELETE FROM prenotazioni WHERE IDPr = ?";
+            $sql = "DELETE FROM customer_resevation WHERE IDPr = ?";
             
             $deleteRecord = mysqli_prepare($conn,$sql);
             mysqli_stmt_bind_param($deleteRecord, 'i',$IDReservation);

@@ -50,12 +50,12 @@ if ($_POST != "") {
             <?php
               
               require 'include/coonProcedurale.php';
-              $sql = "SELECT nome FROM clienti ORDER BY nome ASC";
+              $sql = "SELECT customer_name FROM customers ORDER BY customer_name ASC";
               $result = mysqli_query($conn, $sql);
             
               if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
-                  echo "<option value='" . $row['nome'] . "'>" . $row['nome'] . "</optopn>"; 
+                  echo "<option value='" . $row['customer_name'] . "'>" . $row['customer_name'] . "</optopn>"; 
                 }
               } else {
                 echo "<h3 class='center-text'>non hai ancora CLIENTI in elenco.</h3>";
@@ -109,7 +109,7 @@ if ($_POST != "") {
         // check if the reservation is not already present into the DB
         require 'include/coonProcedurale.php';
         
-        $sql = "SELECT * FROM prenotazioni WHERE camera = ?";
+        $sql = "SELECT * FROM customer_reservation WHERE room = ?";
         
         $record = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($record, 's',$cleanRoom);
@@ -120,8 +120,8 @@ if ($_POST != "") {
           $reservationArray = array();
           $newReservationArray = array();
           while($row = mysqli_fetch_assoc($result)) {
-            $begin = new DateTime($row['dataDa']);
-            $end = new DateTime($row['dataA']);
+            $begin = new DateTime($row['from_date']);
+            $end = new DateTime($row['to_date']);
             for($i = $begin; $i <= $end; $i->modify('+1 day')){
               $dayReserved = $i->format('Y-m-d');
               array_push($reservationArray, $dayReserved);
@@ -143,7 +143,7 @@ if ($_POST != "") {
           }
         }
         mysqli_stmt_close($record);
-        $sql = "INSERT INTO prenotazioni (cliente, camera, dataDa, dataA) VALUES (?,?,?,?)";
+        $sql = "INSERT INTO customer_reservation (customer, room, from_date, to_date) VALUES (?,?,?,?)";
         if($stmt = mysqli_prepare($conn, $sql)){
           mysqli_stmt_bind_param($stmt, "ssss", $cleanCustomer, $cleanRoom, $cleanDateFrom, $cleanDateTo);
           mysqli_stmt_execute($stmt);

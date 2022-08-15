@@ -11,7 +11,7 @@ class CustomerMng {
   
   public function customerList() {
     try {
-      $query = "SELECT * FROM clienti ORDER BY nome DESC";
+      $query = "SELECT * FROM customers ORDER BY customer_name ASC";
       $rq = $this->PDO->prepare($query);
       $rq->execute();
       return $rq;
@@ -26,7 +26,7 @@ class CustomerMng {
   
   public function customerDelete($idCancel, $nameCancel) {
     try {
-      $query = "DELETE FROM clienti WHERE ID = :id";
+      $query = "DELETE FROM customers WHERE ID = :id";
       $rq = $this->PDO->prepare($query);
       $rq->bindParam(":id", $idCancel, PDO::PARAM_STR);
       $rq->execute();
@@ -35,12 +35,12 @@ class CustomerMng {
         return false;
     }
     try {
-      $query1 = "DELETE FROM prenotazioni WHERE cliente = :nameCancel";
+      $query1 = "DELETE FROM customer_reservation WHERE customer = :nameCancel";
       $rq = $this->PDO->prepare($query1);
       $rq->bindParam(":nameCancel", $nameCancel, PDO::PARAM_STR);
       $rq->execute();
     } catch(PDOException $e) {
-        echo "Errore di cancellazione nel DB prenotazioni" . $e->getMessage();
+        echo "Errore di cancellazione nel DB reservations" . $e->getMessage();
         return false;
     }
     return true;
@@ -58,7 +58,7 @@ class CustomerMng {
     $cleanNote = htmlspecialchars($cleanNote);
 
     try{
-    $query = "SELECT * FROM clienti WHERE (nome = :cleanName)";
+    $query = "SELECT * FROM customers WHERE (customer_name = :cleanName)";
     $rq = $this->PDO->prepare($query);
     $rq->bindParam(":cleanName", $cleanName, PDO::PARAM_STR);
     $rq->execute();
@@ -85,7 +85,7 @@ class CustomerMng {
         return false;
       } else {
         // now we can launch the query
-        $query = "INSERT INTO clienti (nome, email, note) VALUES (:cleanName, :cleanEmail, :cleanNote)";
+        $query = "INSERT INTO customers (customer_name, customer_email, customer_text) VALUES (:cleanName, :cleanEmail, :cleanNote)";
         $rq = $this->PDO->prepare($query);
         $rq->bindParam(":cleanName", $cleanName, PDO::PARAM_STR);
         $rq->bindParam(":cleanEmail", $cleanEmail, PDO::PARAM_STR);
@@ -116,7 +116,7 @@ class CustomerMng {
         return false;
       } else {
         // now we can launch the query
-        $query = "UPDATE clienti SET email = :cleanEmail, note = :cleanNote WHERE id = :cleanIdModify";
+        $query = "UPDATE customers SET customer_email = :cleanEmail, customer_text = :cleanNote WHERE ID = :cleanIdModify";
         $rq = $this->PDO->prepare($query);
         $rq->bindParam(":cleanEmail", $cleanEmail, PDO::PARAM_STR);
         $rq->bindParam(":cleanNote", $cleanNote, PDO::PARAM_STR);
