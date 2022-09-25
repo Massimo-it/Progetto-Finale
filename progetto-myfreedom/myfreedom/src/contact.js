@@ -35,7 +35,7 @@ class Contact extends Component {
             </div>
             
             <div className="button">
-            <a className="email" href="mailto:max.dev@europe.com">Mandami una email</a>
+            <a className="email" href="mailto:max.dev@europe.com">Inviami una email</a>
             </div>
             
             
