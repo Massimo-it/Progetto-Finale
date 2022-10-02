@@ -8,7 +8,6 @@ import Description from "./description";
 import Equipment from "./equipment";
 import Contact from "./contact";
 import Home from "./home";
-import Logo from './images/logo.png';
 
 function Navbar() {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -22,11 +21,11 @@ function Navbar() {
         <HashRouter>
           <header className="headerC">
             <div className="headerContainer">
-              <NavLink to="/" onClick={() => closeMenu()} className="logo"><img className="logoImg" src={Logo} /> My Freedom</NavLink>
+              <NavLink to="/" onClick={() => closeMenu()} className="logo"><img className="logoImg" src={process.env.PUBLIC_URL + "/images/logo.png"} alt="logo"/> My Freedom</NavLink>
             </div>
           </header>
           <nav className="navBar">
-              <button id="openClose" onClick={handleToggle}>{navbarOpen ? "Chiudi" : "Apri"}</button>
+              <button id="openClose" onClick={handleToggle}>{navbarOpen ? <img src={process.env.PUBLIC_URL + "/icons/close_black_24dp.svg"} alt="icona della croce"/> : <img src={process.env.PUBLIC_URL + "/icons/hamburger_24dp.svg"} alt="icona hamburger"/> } </button>
               <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
                 <li><NavLink to="/description" className="position" onClick={() => closeMenu()}>Descrizione</NavLink></li>
                 <li><NavLink to="/equipment" className="position" onClick={() => closeMenu()}>Dotazioni</NavLink></li>

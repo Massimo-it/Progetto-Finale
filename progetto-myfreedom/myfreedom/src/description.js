@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import Clock from './icons/schedule_black_24dp.svg';
  
-class Description extends Component {
-  render() {
+function Description() {
     return (
         <div>
         <section id="description">
@@ -22,13 +20,13 @@ class Description extends Component {
             <h3>CHECK-IN/CHECK-OUT</h3>
             <div className="containerFlex">
                 <p className="smallerAnte">Check-in</p>
-                <img className="icons" src={Clock} alt="icona dell'orologio" height="50"></img>
+                <img className="icons" src={process.env.PUBLIC_URL + "/icons/schedule_black_24dp.svg"} alt="icona dell'orologio" height="50"></img>
                 <p className="smallerPost">Gli ospiti sono pregati di arrivare dopo le ore 14:00</p>
             </div>
             <br></br>
             <div className="containerFlex">
                 <p className="smallerAnte">Check-out</p>
-                <img className="icons" src={Clock} alt="icona dell'orologio" height="50"></img>
+                <img className="icons" src={process.env.PUBLIC_URL + "/icons/schedule_black_24dp.svg"} alt="icona dell'orologio" height="50"></img>
                 <p className="smallerPost">Gli ospiti sono pregati di lasciare libero l'appartamento prima delle ore 10:00</p>
             </div>
             
@@ -47,8 +45,7 @@ class Description extends Component {
 
         </div>
 
-        );
-  }
+    );
 }
  
 export default Description;

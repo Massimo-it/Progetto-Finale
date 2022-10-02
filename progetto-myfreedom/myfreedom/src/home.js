@@ -1,12 +1,4 @@
 import React, { Component } from "react";
-import Facciata from './images/big-facciata.jpg';
-import Soggiorno from './images/big-soggiorno.jpg';
-import Cucina from './images/big-cucina.jpg';
-import Bagno from './images/big-bagno.jpg';
-import Camera from './images/big-cameraletto.jpg';
-
-
-
 
 const Home = () => {
   return (
@@ -14,35 +6,35 @@ const Home = () => {
       <section className="homeSection">
         <div className="each-img">
           <div className="image-container">
-            <img src={Facciata} />
+            <img src={process.env.PUBLIC_URL + "/images/big-facciata.jpg"} alt="facciata"/>
             <h1>La facciata</h1>
           </div>
           
         </div>
         <div className="each-img">
           <div className="image-container">
-            <img src={Soggiorno} />
+            <img src={process.env.PUBLIC_URL + "/images/big-soggiorno.jpg"} alt="soggiorno"/>
             <h1>Il Soggiorno</h1>
           </div>
         </div>
 
         <div className="each-img">
           <div className="image-container">
-            <img src={Cucina} />
+            <img src={process.env.PUBLIC_URL + "/images/big-cucina.jpg"} alt="cucina"/>
             <h1>La Cucina</h1>
           </div>  
         </div>
 
         <div className="each-img">
           <div className="image-container">
-            <img src={Bagno} />
+            <img src={process.env.PUBLIC_URL + "/images/big-bagno.jpg"} alt="bagno"/>
             <h1>Il Bagno</h1>
           </div>  
         </div>
 
         <div className="each-img">
           <div className="image-container">
-            <img src={Camera} />
+            <img src={process.env.PUBLIC_URL + "/images/big-cameraletto.jpg"} alt="camera da letto"/>
             <h1>La Camera da Letto</h1>
           </div>  
         </div>
