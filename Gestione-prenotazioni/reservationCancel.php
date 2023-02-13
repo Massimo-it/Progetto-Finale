@@ -10,9 +10,6 @@ if ($_POST != "") {
   if (isset($_POST['logout'])) {
     require 'include/logout.php';
   }
-  if (isset($_POST['control'])) {
-    header('location: controlpanel.php');
-  }
 }
 
 ?>
@@ -56,7 +53,7 @@ if ($_POST != "") {
         // take from DB the reservation to be cancelled
         
         require 'include/coonProcedurale.php';
-        $sql = "SELECT * FROM customer_resevation WHERE IDPr = ?";
+        $sql = "SELECT * FROM customer_reservation WHERE IDPr = ?";
         $record = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($record, 'i',$IDReservation);
         mysqli_stmt_execute($record);
@@ -84,7 +81,7 @@ if ($_POST != "") {
           
           if (isset($_POST['cancel'])) {
             require 'include/coonProcedurale.php';
-            $sql = "DELETE FROM customer_resevation WHERE IDPr = ?";
+            $sql = "DELETE FROM customer_reservation WHERE IDPr = ?";
             
             $deleteRecord = mysqli_prepare($conn,$sql);
             mysqli_stmt_bind_param($deleteRecord, 'i',$IDReservation);
@@ -92,7 +89,7 @@ if ($_POST != "") {
 
             if ($deleteRecord->execute()) {
               echo "<script>alert('Prenotazione cancellata');</script>";
-              echo "<script>window.location = 'controlPanel.php';</script>";
+              echo "<script>window.location = 'controlpanel';</script>";
             } else {
               echo "Errore di connesione al database: " . mysqli_error($conn);
             }
@@ -102,7 +99,7 @@ if ($_POST != "") {
           // come back to the control panel
         
           if (isset($_POST['control'])) {
-            header('location: controlpanel.php');
+            header('location: controlpanel');
           }
         }
 

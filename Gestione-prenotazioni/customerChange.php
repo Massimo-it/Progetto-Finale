@@ -6,7 +6,7 @@ if ($_POST != "") {
     require 'include/logout.php';
   }
   if (isset($_POST['control'])) {
-    header('location: controlpanel.php');
+    header('location: controlpanel');
   } 
 }
 
@@ -67,7 +67,7 @@ if ($_POST != "") {
             echo "<tr><th>NOTE</th><td>" . $customerNote . "</td></tr>";
           }
           } else {
-          header('location: customerList.php');
+          header('location: customerlist');
         }
         ?> 
         
@@ -132,38 +132,6 @@ if ($_POST != "") {
         
       }
     </script>
-    
-    <?php
-    /*
-    if ($_POST != "") {
-      if (isset($_POST['email'])) {
-
-        require 'include/coonProcedurale.php';
-        
-        $cleanEmail = trim($_POST['email']);
-        $cleanNote = trim($_POST['note']);
-        $cleanName = htmlspecialchars($cleanName);
-        $cleanEmail = filter_var(filter_var($cleanEmail, FILTER_SANITIZE_EMAIL), FILTER_VALIDATE_EMAIL);
-        $cleanNote = htmlspecialchars($cleanNote);
-        
-        
-        if (!(mb_strlen($cleanNote) >= 1 && mb_strlen($cleanNote) <= 255)) {
-            echo "<script>alert('Le note possono essere al massimo 255 caratteri.');</script>";
-            return false;
-          } else {
-            // now we can launch the query
-              $sql = "UPDATE clienti SET nome=?, email=?, note=? WHERE ID = ?";
-              if($stmt = mysqli_prepare($conn, $sql)){
-                mysqli_stmt_bind_param($stmt, "ssss", $customerName, $cleanEmail, $cleanNote, $idModify);
-                mysqli_stmt_execute($stmt);
-                echo "<script>alert('Registrazione effettuata con successo.');</script>";
-            }
-            echo "<script>window.location = 'customerList.php';</script>";
-          }  
-      }
-    }
-    */
-    ?>
     
     
   </body>
