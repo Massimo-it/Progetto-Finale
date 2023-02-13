@@ -12,10 +12,15 @@ Per accedere alla pagina statica utilizzare il file index.html da cui si può ac
 per far funzionare il router.php è necessario creare e salvare nella cartella Gestione-prenotazioni il file .htaccess con il seguente contenuto:
 
 RewriteBase /Progetto-finale/Gestione-prenotazioni/
+
 RewriteRule ^index\.php＄ - [L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
+
 RewriteCond %{REQUEST_FILENAME} !-d
+
 RewriteRule . /Progetto-finale/Gestione-prenotazioni/index.php [L]
+
 
 ***
 
